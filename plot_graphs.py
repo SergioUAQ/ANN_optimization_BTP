@@ -70,7 +70,7 @@ y = [y1, y2, y3]
 plot_all(x, y)
 
 # exit()
-# pyplot.xlabel("iteration no. ->")
+# pyplot.xlabel("iteration no.accuracy_score ->")
 # pyplot.ylabel("GOA fitness ->")
 # pyplot.plot(x, y1)
 # pyplot.plot(x, y2)

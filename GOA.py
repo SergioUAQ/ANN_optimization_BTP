@@ -60,7 +60,7 @@ def give_a_random_solution(no_of_features):
     # Transfer Function for Hidden Layer 2
     current_set = random.randint(0, 3)
     vector.append(np.array(tf_spool[current_set]))
-    return np.array(vector)
+    return np.array(vector, dtype=object)
 
 
 def reset_grasshopper(gh):
@@ -313,7 +313,7 @@ def guess_weight(gh, previous_gh, old_weights):  # here, gh is new grasshopper
     new_wo = np.random.randn(new_no_of_hl2, new_no_of_outputs) + np.mean(old_weights[4])
     new_bo = np.random.randn(1, new_no_of_outputs) + np.mean(old_weights[5])
 
-    return np.array([new_wh1, new_bh1, new_wh2, new_bh2, new_wo, new_bo])
+    return np.array([new_wh1, new_bh1, new_wh2, new_bh2, new_wo, new_bo], dtype=object)
 
 
 def validation_split_of_dataset(x_train, y_train):

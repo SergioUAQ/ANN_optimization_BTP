@@ -69,7 +69,9 @@ def save_log():
             self.stream.write(data)
             self.stream.flush()
             te.write(data)  # Write the data of stdout here to a text file as well
-
+        def flush(self):
+            self.stream.flush()
+            te.flush()
     sys.stdout = Unbuffered(sys.stdout)
 
 
@@ -92,7 +94,7 @@ if __name__ == '__main__':
     # y_test = y_train
     dataset_path = "datasets/iris.csv"
     print(dataset_path.split('/')[1])
-    if settings.arch_penalty_weight is 0:
+    if settings.arch_penalty_weight == 0:
         print("Running W/O PENALTY.")
     else:
         print("Running With PENALTY.")

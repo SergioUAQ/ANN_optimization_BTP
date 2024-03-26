@@ -3,7 +3,7 @@ from sklearn import datasets
 import math
 import random
 import copy
-import math
+import mathneural_network
 from sklearn.metrics import accuracy_score
 from sklearn.neural_network import MLPClassifier
 import time
@@ -31,7 +31,7 @@ def initialize_weight_chromosome(no_of_input_neurons, no_of_hidden_neurons1, no_
     bo = np.random.randn(1, no_of_output_neurons)
 
     W = [wh1, bh1, wh2, bh2, wo, bo]
-    return np.array(W)
+    return np.array(W, dtype=object)
 
 
 def softmax(A):
@@ -91,6 +91,8 @@ def generate_output_and_error(X, Y, W, tf1, tf2):
 
     # final output layer's output
     output = softmax(inputForOutputLayer)
+
+    epsilon = 1e-10  # Pequeña cantidad para evitar log(0)
 
     # calculate error
     cross_ent_error = np.sum(-Y * np.log(output)) / (len(X) * settings.no_of_classes)
