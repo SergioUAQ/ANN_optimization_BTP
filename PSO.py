@@ -3,7 +3,7 @@ from sklearn import datasets
 import math
 import random
 import copy
-import mathneural_network
+import math
 from sklearn.metrics import accuracy_score
 from sklearn.neural_network import MLPClassifier
 import time
